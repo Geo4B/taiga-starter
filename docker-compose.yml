@@ -49,7 +49,9 @@ services:
   taiga-back:
     image: taigaio/taiga-back:latest
     environment: *default-back-environment
-    volumes: *default-back-volumes
+    volumes:
+      - $TAIGA_STATIC_DATA:/taiga/static
+      - $TAIGA_MEDIA_DATA:/taiga/media
     networks:
       - taiga
     depends_on:
