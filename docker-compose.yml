@@ -27,6 +27,9 @@ x-environment: &default-back-environment
   # Telemetry settings
   ENABLE_TELEMETRY: "${ENABLE_TELEMETRY}"
   # ...your customizations go here
+  TAIGA_DB_DATA: ${TAIGA_DB_DATA}
+  TAIGA_STATIC_DATA: ${TAIGA_STATIC_DATA}
+  TAIGA_MEDIA_DATA: ${TAIGA_MEDIA_DATA}
 
 services:
   taiga-db:
