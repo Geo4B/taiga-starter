@@ -32,8 +32,6 @@ x-environment:
 x-volumes:
   &default-back-volumes
   # These volumens will be used by taiga-back and taiga-async.
-  - $TAIGA_STATIC_DATA:/taiga-back/static
-  - $TAIGA_MEDIA_DATA:/taiga-back/media
   # - ./config.py:/taiga-back/settings/config.py
 
 services:
