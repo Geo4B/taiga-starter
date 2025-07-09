@@ -50,8 +50,8 @@ services:
     image: taigaio/taiga-back:latest
     environment: *default-back-environment
     volumes:
-      - $TAIGA_STATIC_DATA:/taiga/static
-      - $TAIGA_MEDIA_DATA:/taiga/media
+      - ${TAIGA_STATIC_DATA}:/taiga/static
+      - ${TAIGA_MEDIA_DATA}:/taiga/media
     networks:
       - taiga
     depends_on:
@@ -67,8 +67,8 @@ services:
     entrypoint: ["/taiga-back/docker/async_entrypoint.sh"]
     environment: *default-back-environment
     volumes:
-      - $TAIGA_STATIC_DATA:/taiga/static
-      - $TAIGA_MEDIA_DATA:/taiga/media
+      - ${TAIGA_STATIC_DATA}:/taiga/static
+      - ${TAIGA_MEDIA_DATA}:/taiga/media
     networks:
       - taiga
     depends_on:
@@ -142,9 +142,9 @@ services:
     ports:
       - "9000:80"
     volumes:
-      - $TAIGA_NGINX_CONF:/etc/nginx/conf.d/default.conf
-      - $TAIGA_STATIC_DATA:/taiga/static
-      - $TAIGA_MEDIA_DATA:/taiga/media
+      - ${TAIGA_NGINX_CONF}:/etc/nginx/conf.d/default.conf
+      - ${TAIGA_STATIC_DATA}:/taiga/static
+      - ${TAIGA_MEDIA_DATA}:/taiga/media
     networks:
       - taiga
     depends_on:
